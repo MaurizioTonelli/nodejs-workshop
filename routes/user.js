@@ -3,7 +3,7 @@ const jwt = require('jsonwebtoken');
 const user = express.Router();
 const db = require('../config/database');
 
-user.post("/",async (res,req,next)=>{
+user.post("/signin",async (res,req,next)=>{
     const {user_name, user_mail, user_password} = req.body;
     if(user_name && user_name && user_password){
         let query = "INSERT INTO user(user_name,user_mail,user_password) ";
